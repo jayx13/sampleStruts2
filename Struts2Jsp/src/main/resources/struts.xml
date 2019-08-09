@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="global"/>
+	<package name="default" extends="struts-default">
+
+		<action name="Login">
+			<result>views/login.jsp</result>
+		</action>
+		<action name="Return">
+			<result>views/welcomeUser.jsp</result>
+		</action>
+
+		<action name="Welcome" class="com.jcg.struts2.jsp.Login">
+			<interceptor-ref name ="params"/>
+			<interceptor-ref name ="timer"/>
+			<result name="success">views/welcomeUser.jsp</result>
+			<result name="error">views/error.jsp</result>
+		</action>
+
+		<action name="Logout">
+			<result>views/landingPage.jsp</result>
+		</action>
+
+		<action name="Upload">
+			<result>views/uploadFile.jsp</result>
+		</action>
+
+		<action name="doUpload" class="com.jcg.struts2.jsp.Upload" method="upload">
+			<result name="success">views/uploadFile.jsp</result>
+			<result name="error">views/uploadFile.jsp</result>
+		</action>
+
+		<action name="Email">
+			<result>views/email.jsp</result>
+		</action>
+
+		<action name="sendEmail" class="com.jcg.struts2.jsp.Email" method="email">
+			<result name="success">views/email.jsp</result>
+			<result name="error">views/email.jsp</result>
+		</action>
+
+		<action name="EmpInfo">
+			<result>views/employee.jsp</result>
+		</action>
+
+		<action name="valEmp" class="com.jcg.struts2.jsp.Employee">
+			<result name="input">views/employee.jsp</result>
+			<result name="success">views/employee.jsp</result>
+		</action>
+
+		<action name="EmpInfoMulti">
+			<result>views/employeeMulti.jsp</result>
+		</action>
+
+		<action name="valEmpMulti" class="com.jcg.struts2.jsp.EmployeeMulti">
+			<result name="input">views/employeeMulti.jsp</result>
+			<result name="success">views/employeeMulti.jsp</result>
+		</action>
+
+		<action name="locale" class="com.jcg.struts2.jsp.Locale">
+			<result name="success">views/employeeMulti.jsp</result>
+		</action>
+
+		<action name="System" class="com.jcg.struts2.jsp.SystemDetails">
+			<result name="success">views/system.jsp</result>
+		</action>
+
+		<action name="Generator">
+			<result>views/generator.jsp</result>
+		</action>
+
+		<action name="doGenerator" class="com.jcg.struts2.jsp.Generator">
+			<result name="success">views/generator.jsp</result>
+		</action>
+
+		<action name="Counter">
+			<result>views/counter.jsp</result>
+		</action>
+
+		<action name="Date" class="com.jcg.struts2.jsp.DateView">
+			<result name="success">views/date.jsp</result>
+		</action>
+
+		<action name="Ajax">
+			<result>views/ajax.jsp</result>
+		</action>
+
+
+
+
+	</package>
+</struts>
